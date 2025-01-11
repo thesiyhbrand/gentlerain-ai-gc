@@ -56,7 +56,11 @@ This project serves as an excellent portfolio piece, showcasing expertise in rep
 
 ## 🎨 Screenshots
 
-_Add screenshots of your project here to showcase the design and functionality._
+![image](https://github.com/user-attachments/assets/3df000dc-27ed-4644-a569-2928aa11b702)
+![image](https://github.com/user-attachments/assets/ece3fb9e-84fb-4d85-a3b6-08e3651bd973)
+![image](https://github.com/user-attachments/assets/a4265087-4218-4c00-a6ce-4004839d9452)
+![image](https://github.com/user-attachments/assets/06725677-a57b-4d71-ba6b-2361399e81e3)
+
 
 ## 🌍 Live Demo
 
