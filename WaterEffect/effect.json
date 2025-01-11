@@ -1,0 +1,222 @@
+{
+    "history": [
+        {
+            "breakpoints": [],
+            "visible": true,
+            "aspectRatio": 1,
+            "layerType": "effect",
+            "type": "gradient",
+            "speed": 0.25,
+            "trackMouse": 0,
+            "mouseMomentum": 0,
+            "animating": false,
+            "isMask": 0,
+            "compiledFragmentShaders": [
+                "#version 300 es\nprecision highp float;in vec2 vTextureCoord;uniform vec2 uMousePos; vec3 getColor(int index) { switch(index) { case 0: return vec3(0.9764705882352941, 0.44313725490196076, 0.1450980392156863); case 1: return vec3(0, 0, 0); case 2: return vec3(0, 0, 0); case 3: return vec3(0, 0, 0); case 4: return vec3(0, 0, 0); case 5: return vec3(0, 0, 0); case 6: return vec3(0, 0, 0); case 7: return vec3(0, 0, 0); case 8: return vec3(0, 0, 0); case 9: return vec3(0, 0, 0); case 10: return vec3(0, 0, 0); case 11: return vec3(0, 0, 0); case 12: return vec3(0, 0, 0); case 13: return vec3(0, 0, 0); case 14: return vec3(0, 0, 0); case 15: return vec3(0, 0, 0); default: return vec3(0.0); } }const float PI = 3.14159265;vec2 rotate(vec2 coord, float angle) { float s = sin(angle); float c = cos(angle); return vec2( coord.x * c - coord.y * s, coord.x * s + coord.y * c ); }out vec4 fragColor;vec3 getColor(vec2 uv) {return vec3(0.9764705882352941, 0.44313725490196076, 0.1450980392156863); }void main() { vec2 uv = vTextureCoord; vec2 pos = vec2(0.5, 0.5) + mix(vec2(0), (uMousePos-0.5), 0.00); uv -= pos; uv /= (0.50*2.); uv = rotate(uv, (0.00 - 0.5) * 2. * PI); vec4 color = vec4(getColor(uv), 1); fragColor = color; }"
+            ],
+            "compiledVertexShaders": [
+                "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = aTextureCoord; }"
+            ],
+            "data": {
+                "depth": false,
+                "uniforms": {}
+            }
+        },
+        {
+            "breakpoints": [
+                {
+                    "name": "Desktop",
+                    "max": null,
+                    "min": 992,
+                    "props": {
+                        "height": 127,
+                        "textContent": "Gravity Coding",
+                        "fontStyle": "800",
+                        "fontFamily": "Gabarito",
+                        "fontSize": 107,
+                        "width": 693,
+                        "translateX": -73,
+                        "lineHeight": 127,
+                        "letterSpacing": -3,
+                        "translateY": 118
+                    }
+                },
+                {
+                    "name": "Tablet",
+                    "max": 991,
+                    "min": 576,
+                    "props": {
+                        "width": 473,
+                        "height": 254,
+                        "translateX": 37,
+                        "fontSize": 125,
+                        "translateY": 71
+                    }
+                },
+                {
+                    "name": "Mobile",
+                    "max": 575,
+                    "min": 0,
+                    "props": {
+                        "width": 366,
+                        "translateX": 91,
+                        "height": 254,
+                        "fontSize": 110,
+                        "translateY": 5
+                    }
+                }
+            ],
+            "visible": true,
+            "locked": false,
+            "aspectRatio": 1,
+            "layerName": "",
+            "isElement": true,
+            "opacity": 1,
+            "displace": 0,
+            "trackMouse": 0,
+            "mouseMomentum": 0,
+            "blendMode": "NORMAL",
+            "bgDisplace": 0,
+            "mask": 0,
+            "maskBackground": {
+                "type": "Vec3",
+                "_x": 0,
+                "_y": 0,
+                "_z": 0
+            },
+            "maskAlpha": 0,
+            "maskDepth": 0,
+            "dispersion": 0,
+            "axisTilt": 0.16,
+            "states": {
+                "appear": [],
+                "scroll": [],
+                "hover": []
+            },
+            "layerType": "text",
+            "justCreated": false,
+            "effects": [],
+            "fill": [
+                "#ffffff"
+            ],
+            "fontSize": 107,
+            "fontCSS": {
+                "family": "Gabarito",
+                "src": "https://assets.unicorn.studio/fonts/google_fonts/QGYwz_0dZAGKJJ4t3FFkc3Q8AkNP9Pj2Y8W0FgItq6bFIg.ttf"
+            },
+            "lineHeight": 127,
+            "letterSpacing": -3,
+            "fontFamily": "Gabarito",
+            "fontStyle": "800",
+            "fontWeight": "400",
+            "textAlign": "center",
+            "textContent": "Gravity Coding", 
+            "gradientAngle": 0,
+            "gradientType": "linear",
+            "coords": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    693,
+                    0
+                ],
+                [
+                    693,
+                    127
+                ],
+                [
+                    0,
+                    127
+                ]
+            ],
+            "rotation": 0,
+            "translateX": -73,
+            "translateY": 118,
+            "width": 693,
+            "height": 127,
+            "isSafari": false,
+            "compiledFragmentShaders": [
+                "#version 300 es\nprecision mediump float; in vec2 vTextureCoord; in vec3 vVertexPosition;uniform sampler2D uBgTexture; uniform sampler2D uTexture; uniform vec2 uMousePos; uniform vec2 uResolution; uniform int uSampleBg;vec2 perspectiveUV(vec2 uv) { float aspectRatio = uResolution.x/uResolution.y; vec2 centeredUV = uv - 0.5; centeredUV.x *= aspectRatio; float strength = 1.0 + (vVertexPosition.z * 0.16); vec2 perspectiveUV = centeredUV / strength; perspectiveUV.x /= aspectRatio; perspectiveUV += 0.5; return perspectiveUV; }out vec4 fragColor;void main() { vec2 uv = vTextureCoord; vec2 pos = mix(vec2(0), (uMousePos - 0.5), 0.00);uv = perspectiveUV(uv) - pos;vec4 color = texture(uTexture, uv); vec4 background = vec4(0);if(uSampleBg == 1) { background = texture(uBgTexture, vTextureCoord); }color = mix(background, color / max(color.a, 0.0001), color.a * 1.00);fragColor = color; }"
+            ],
+            "compiledVertexShaders": [
+                "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix; uniform vec2 uMousePos;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { float angleX = uMousePos.y * 0.5 - 0.25; float angleY = (1.-uMousePos.x) * 0.5 - 0.25; mat4 rotateX = mat4(1.0, 0.0, 0.0, 0.0, 0.0, cos(angleX), -sin(angleX), 0.0, 0.0, sin(angleX), cos(angleX), 0.0, 0.0, 0.0, 0.0, 1.0); mat4 rotateY = mat4(cos(angleY), 0.0, sin(angleY), 0.0, 0.0, 1.0, 0.0, 0.0, -sin(angleY), 0.0, cos(angleY), 0.0, 0.0, 0.0, 0.0, 1.0);mat4 rotationMatrix = rotateX * rotateY; gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vVertexPosition = (rotationMatrix * vec4(aVertexPosition, 1.0)).xyz; vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+            ]
+        },
+        {
+            "breakpoints": [],
+            "visible": true,
+            "aspectRatio": 1,
+            "layerType": "effect",
+            "type": "waterRipple",
+            "speed": 0.88,
+            "animating": true,
+            "mouseMomentum": 0,
+            "isMask": 0,
+            "compiledFragmentShaders": [
+                "#version 300 es\nprecision highp float;in vec2 vTextureCoord; in vec3 vVertexPosition;uniform sampler2D uPingPongTexture;const float PI = 3.1415926; const float ITERATIONS = 24.0;out vec4 fragColor;vec3 calculateNormal(sampler2D tex, vec2 uv) { float stengthScale = mix(3., 7., 1.00); float stepScale = mix(1., 3., 1.00); float strength = mix(1., stengthScale, 0.85); float stepSize = mix(1., stepScale, 0.85); float step = stepSize / 1080.; float left = texture(tex, uv + vec2(-step, 0.0)).r; float right = texture(tex, uv + vec2(step, 0.0)).r; float top = texture(tex, uv + vec2(0.0, -step)).r; float bottom = texture(tex, uv + vec2(0.0, step)).r; vec3 normal; normal.x = (right - left) * strength; normal.y = -(bottom - top) * strength; normal.z = -1.0; return normalize(normal); }vec4 drawRipple(vec2 uv) { vec2 scaled = mix(uv, (uv - 0.5) * 0.5 + 0.5, 1.00); vec3 normal = calculateNormal(uPingPongTexture, scaled); return vec4(normal, 1.); }const vec3 LIGHT_POS = vec3(2.0, 2.0, 3.0); const vec3 VIEW_POS = vec3(0.0, 0.0, 2.0); const float SPECULAR = 2.4; const float SHININESS = 128.0;vec4 getColor(vec2 uv) { return drawRipple(uv); }void main() { vec2 uv = vTextureCoord; vec4 color = getColor(uv); fragColor = color; }",
+                "#version 300 es\nprecision highp float;in vec2 vTextureCoord; in vec3 vVertexPosition;uniform sampler2D uTexture;const float PI = 3.1415926; const float ITERATIONS = 24.0;float getGaussianWeight(int index) { switch(index) { case 0: return 0.7978845608028654; case 1: return 0.795118932516684; case 2: return 0.7868794322038799; case 3: return 0.7733362336056986; case 4: return 0.7547664553859864; case 5: return 0.7315447328280048; case 6: return 0.704130653528599; case 7: return 0.6730536454899063; case 8: return 0.6388960110447045; case 9: return 0.6022748643096089; case 10: return 0.5638237508206051; case 11: return 0.5241747061566029; case 12: return 0.48394144903828673; case 13: return 0.443704309411472; case 14: return 0.40399737110811773; case 15: return 0.36529817077804383; case 16: return 0.3280201493519873; case 17: return 0.29250790855907144; case 18: return 0.2590351913317835; case 19: return 0.2278053882403838; case 20: return 0.19895427758549736; case 21: return 0.17255463765302306; case 22: return 0.1486223271179862; case 23: return 0.12712341303392466; default: return 0.0; } }out vec4 fragColor;vec4 blur(vec2 uv, vec2 dir) { vec4 color = vec4(0.0); float total_weight = 0.0; vec4 center = texture(uTexture, uv); float center_weight = getGaussianWeight(0); color += center * center_weight; total_weight += center_weight; for (int i = 1; i <= 11; i++) { float weight = getGaussianWeight(i); float offset = mix(0.005, 0.015, 0.69) * float(i)/11.; vec4 sample1 = texture(uTexture, uv + offset * dir); vec4 sample2 = texture(uTexture, uv - offset * dir); color += (sample1 + sample2) * weight; total_weight += 2.0 * weight; }return color / total_weight; }const vec3 LIGHT_POS = vec3(2.0, 2.0, 3.0); const vec3 VIEW_POS = vec3(0.0, 0.0, 2.0); const float SPECULAR = 2.4; const float SHININESS = 128.0;vec4 getColor(vec2 uv) { return blur(uv, vec2(1, 0)); }void main() { vec2 uv = vTextureCoord; vec4 color = getColor(uv); fragColor = color; }",
+                "#version 300 es\nprecision highp float;in vec2 vTextureCoord; in vec3 vVertexPosition;uniform sampler2D uTexture;const float PI = 3.1415926; const float ITERATIONS = 24.0;float getGaussianWeight(int index) { switch(index) { case 0: return 0.7978845608028654; case 1: return 0.795118932516684; case 2: return 0.7868794322038799; case 3: return 0.7733362336056986; case 4: return 0.7547664553859864; case 5: return 0.7315447328280048; case 6: return 0.704130653528599; case 7: return 0.6730536454899063; case 8: return 0.6388960110447045; case 9: return 0.6022748643096089; case 10: return 0.5638237508206051; case 11: return 0.5241747061566029; case 12: return 0.48394144903828673; case 13: return 0.443704309411472; case 14: return 0.40399737110811773; case 15: return 0.36529817077804383; case 16: return 0.3280201493519873; case 17: return 0.29250790855907144; case 18: return 0.2590351913317835; case 19: return 0.2278053882403838; case 20: return 0.19895427758549736; case 21: return 0.17255463765302306; case 22: return 0.1486223271179862; case 23: return 0.12712341303392466; default: return 0.0; } }out vec4 fragColor;vec4 blur(vec2 uv, vec2 dir) { vec4 color = vec4(0.0); float total_weight = 0.0; vec4 center = texture(uTexture, uv); float center_weight = getGaussianWeight(0); color += center * center_weight; total_weight += center_weight; for (int i = 1; i <= 11; i++) { float weight = getGaussianWeight(i); float offset = mix(0.005, 0.015, 0.69) * float(i)/11.; vec4 sample1 = texture(uTexture, uv + offset * dir); vec4 sample2 = texture(uTexture, uv - offset * dir); color += (sample1 + sample2) * weight; total_weight += 2.0 * weight; }return color / total_weight; }const vec3 LIGHT_POS = vec3(2.0, 2.0, 3.0); const vec3 VIEW_POS = vec3(0.0, 0.0, 2.0); const float SPECULAR = 2.4; const float SHININESS = 128.0;vec4 getColor(vec2 uv) { return blur(uv, vec2(0, 1)); }void main() { vec2 uv = vTextureCoord; vec4 color = getColor(uv); fragColor = color; }",
+                "#version 300 es\nprecision highp float;in vec2 vTextureCoord; in vec3 vVertexPosition;uniform sampler2D uTexture; uniform sampler2D uBgTexture;const float PI = 3.1415926; const float ITERATIONS = 24.0;out vec4 fragColor;vec3 chromatic_aberration(vec3 color, vec2 uv) { vec2 offset = (uv - vTextureCoord) * (0.25 * 0.2); vec4 left = texture(uBgTexture, uv - offset); vec4 right = texture(uBgTexture, uv + offset);color.r = left.r; color.b = right.b;return color; }vec2 calculateRefraction(vec3 normal, float ior) { vec3 I = vec3(0.0, 0.0, 1.0); float ratio = 1.0 / ior; vec3 refracted = refract(I, normal, ratio); float refractionScale = mix(0.2, 0.4, 1.00); float refractionAmount = mix(0.01, refractionScale, 0.85); return refracted.xy * refractionAmount; }const vec3 LIGHT_POS = vec3(2.0, 2.0, 3.0); const vec3 VIEW_POS = vec3(0.0, 0.0, 2.0); const float SPECULAR = 2.4; const float SHININESS = 128.0;vec3 calculateLighting(vec3 normal, vec2 uv) { vec3 N = normal; vec3 worldPos = vec3(uv * 2.0 - 1.0, 0.0); vec3 lightDir = normalize(LIGHT_POS - worldPos); vec3 viewDir = normalize(VIEW_POS - worldPos); vec3 reflectDir = reflect(-lightDir, N); float diff = max(dot(N, lightDir), 0.0); vec3 diffuse = vec3(diff); float spec = pow(max(dot(viewDir, reflectDir), 0.0), SHININESS); vec3 specular = vec3(spec * SPECULAR); return diffuse + specular; }vec4 getRipple(vec2 uv) { vec3 normal = texture(uTexture, uv).rgb; vec2 refractionOffset = calculateRefraction(normal, 1.333); vec2 refractedUv = uv + refractionOffset; vec3 refractedNormal = texture(uTexture, refractedUv).rgb;vec4 refractedColor = texture(uBgTexture, refractedUv); refractedColor.rgb = chromatic_aberration(refractedColor.rgb, refractedUv);vec3 caustics = calculateLighting(refractedNormal, refractedUv); float causticsShadow = dot(normal, normalize(vec3(2.0, -2.0, 3.0) - vec3(uv * 2.0 - 1.0, 0.0))) + 1.; float shadowFactor = causticsShadow; vec3 lightingFactor = caustics;shadowFactor = mix(1., shadowFactor, 0.62); lightingFactor = mix(vec3(0), lightingFactor * vec3(1, 1, 1), 0.62); vec4 finalColor = vec4(refractedColor.rgb - vec3(1.-shadowFactor) * vec3(1, 1, 1) + lightingFactor, refractedColor.a); return finalColor; }vec4 getColor(vec2 uv) { return getRipple(uv); }void main() { vec2 uv = vTextureCoord; vec4 color = getColor(uv); fragColor = color; }",
+                "#version 300 es\nprecision highp float;in vec3 vVertexPosition; in vec2 vTextureCoord;uniform sampler2D uPingPongTexture; uniform vec2 uPreviousMousePos;uniform vec2 uMousePos; uniform vec2 uResolution;const float PI = 3.1415926; const float TWOPI = 6.2831852;out vec4 fragColor;void main() { vec2 aspect = vec2(uResolution.x/uResolution.y, 1); vec2 texelSize = (1.0 / (vec2(1080) * aspect)) * mix(1., 8., 0.88); vec2 vUv = vTextureCoord; vec2 mPos = mix(uMousePos, (uMousePos - 0.5) * 0.5 + 0.5, 1.00); vec2 pmPos = mix(uPreviousMousePos, (uPreviousMousePos - 0.5) * 0.5 + 0.5, 1.00); vec2 scaledUv = mix(vUv, (vUv - 0.5) * 0.5 + 0.5, 1.00);float waveSpeed = 1.; float damping = mix(0.8, 0.999, 0.64); float velocityDamping = damping; float heightDamping = damping; float time = 0.5;vec4 data = texture(uPingPongTexture, vUv); float height = data.r; float velocity = data.g;float laplacian = 0.0; float totalWeight = 0.0; float scaleDiff = 1.00 * 0.25; vec2 clampRegionMin = vec2(1.00 * 0.5 - scaleDiff); vec2 clampRegionMax = vec2(1.0 - 1.00 * 0.5 + scaleDiff); vec2 offset = vec2(texelSize.x, 0.0); vec2 neighborUv = clamp(vUv + offset, clampRegionMin, clampRegionMax); float weight = 1.0 - length(offset) / (length(texelSize) * 2.0); laplacian += texture(uPingPongTexture, neighborUv).r * weight; totalWeight += weight; offset = vec2(-texelSize.x, 0.0); neighborUv = clamp(vUv + offset, clampRegionMin, clampRegionMax); weight = 1.0 - length(offset) / (length(texelSize) * 2.0); laplacian += texture(uPingPongTexture, neighborUv).r * weight; totalWeight += weight; offset = vec2(0.0, texelSize.y); neighborUv = clamp(vUv + offset, clampRegionMin, clampRegionMax); weight = 1.0 - length(offset) / (length(texelSize) * 2.0); laplacian += texture(uPingPongTexture, neighborUv).r * weight; totalWeight += weight; offset = vec2(0.0, -texelSize.y); neighborUv = clamp(vUv + offset, clampRegionMin, clampRegionMax); weight = 1.0 - length(offset) / (length(texelSize) * 2.0); laplacian += texture(uPingPongTexture, neighborUv).r * weight; totalWeight += weight;float avgNeighbors = laplacian / totalWeight; laplacian = avgNeighbors - height;velocity += waveSpeed * waveSpeed * laplacian; velocity *= velocityDamping; height += velocity; height *= heightDamping;float mouseSpeed = distance(mPos, pmPos); float dist = distance(vUv * aspect, mPos * aspect); float radius = 0.025; if (dist < radius && mouseSpeed > 0.0001) { float drop = cos(dist / radius * PI * time); float intensity = mouseSpeed * 20.; height += drop * intensity; }fragColor = vec4(height, velocity, 0.0, 1.0); }"
+            ],
+            "compiledVertexShaders": [
+                "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = aTextureCoord; }",
+                "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = aTextureCoord; }"
+            ],
+            "data": {
+                "depth": false,
+                "uniforms": {},
+                "passes": [
+                    {
+                        "prop": "pass",
+                        "value": 1,
+                        "downSample": true
+                    },
+                    {
+                        "prop": "pass",
+                        "value": 2,
+                        "downSample": true
+                    },
+                    {
+                        "prop": "pass",
+                        "value": 3,
+                        "includeBg": true
+                    }
+                ]
+            }
+        },
+        {
+            "breakpoints": [],
+            "visible": true,
+            "aspectRatio": 1,
+            "layerType": "effect",
+            "type": "grain",
+            "speed": 0.5,
+            "animating": true,
+            "mouseMomentum": 0,
+            "isMask": 0,
+            "compiledFragmentShaders": [
+                "#version 300 es\nprecision mediump float;in vec3 vVertexPosition; in vec2 vTextureCoord;uniform sampler2D uTexture; uniform float uTime; uniform vec2 uResolution; vec3 blend (int blendMode, vec3 src, vec3 dst) { return src + dst; } const float PHI = 1.61803398874989484820459; float gold_noise(in vec2 xy, in float seed) { return fract(tan(distance(xy*PHI, xy)*seed)*xy.x); }out vec4 fragColor;void main() { vec2 uv = vTextureCoord; vec4 color = texture(uTexture, uv);if(color.a == 0.) { fragColor = vec4(0); return; }vec2 st = uv; vec3 grainRGB = vec3(0);st *= uResolution;float delta = fract((floor(uTime)/20.));if(0 == 1) { grainRGB = vec3( gold_noise(st, delta + 1.), gold_noise(st, delta + 2.), gold_noise(st, delta + 3.) ); } else { grainRGB = vec3(gold_noise(st, delta + 1.)); } if(1 > 0) { color.rgb = mix(color.rgb, blend(1, grainRGB, color.rgb), 0.08); } fragColor = color;}"
+            ],
+            "compiledVertexShaders": [
+                "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+            ],
+            "data": {
+                "depth": false,
+                "uniforms": {}
+            }
+        }
+    ],
+    "options": {
+        "name": "Gravity Coding",
+        "fps": 60,
+        "dpi": 1.5,
+        "scale": 1,
+        "includeLogo": false,
+        "isProduction": false,
+        "freePlan": false
+    },
+    "version": "1.3.2"
+}
