@@ -5,7 +5,8 @@
 This project is a pixel-perfect clone of [Gentlerain.ai](https://gentlerain.ai), a visually stunning and user-centric website that earned recognition on Awwwards for its design excellence. The goal of this project is to recreate the aesthetic, functionality, and interactivity of the original site, serving as a learning exercise in advanced web development and design principles.
 
 ## 👀 Watch Tutorial 👇
-[![Gravity Coding](https://i9.ytimg.com/vi/V6BAPqVWO8s/mqdefault.jpg?v=677cfedf&sqp=CPjRibwG&rs=AOn4CLCX18C9UWFkl5RDz8zA2uxbzcTuyw)](https://youtu.be/V6BAPqVWO8s?si=JDsychz5eeoMWltn)
+[![Gravity Coding](![image](https://github.com/user-attachments/assets/a84f88aa-1fcd-4a3b-bbbf-78e5b51429fb)
+)](https://youtu.be/V6BAPqVWO8s?si=JDsychz5eeoMWltn)
 
 ## 🚀 Features
 
