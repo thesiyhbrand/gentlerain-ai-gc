@@ -6,7 +6,7 @@ This project is a pixel-perfect clone of [Gentlerain.ai](https://gentlerain.ai),
 
 ## 👀 Watch Tutorial 👇
 ![image](https://github.com/user-attachments/assets/d0535bcb-08f0-434e-8c55-5738c31d0c46)
-[![Gravity Coding]](https://youtu.be/V6BAPqVWO8s?si=JDsychz5eeoMWltn)
+[Watch Now 👀](https://youtu.be/V6BAPqVWO8s?si=JDsychz5eeoMWltn)
 
 ## 🚀 Features
 
