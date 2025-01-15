@@ -113,3 +113,124 @@ nav button{
 .btm-content button:nth-child(2){
     border: none !important;
 }
+
+/* Section 2 */
+
+.section-2{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #88b7bd;
+    /* overflow: hidden; */
+}
+
+.video-flow{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    /* background-color: seagreen; */
+}
+
+.video-flow #blob{
+    height: 100%;
+    position: absolute;
+    top: -15%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.nav-inner-2{
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    background-color: #FBE7C5;
+    border: 1px solid #333;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.nav-inner-2 h3{
+    font-weight: 600;
+}
+
+#section2-1{
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+
+.content-inner-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2vw;
+    overflow: hidden;
+    height: 100vh;
+    /* background-color: #333; */
+}
+
+.lft-content-inner-2{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50%;
+    height: 100%;
+}
+
+.lft-content-inner-2 h1{
+    font-size: 5rem;
+    font-weight: 600;
+    color: #fff0dc;
+}
+
+.lft-content-inner-2 p{
+    font-size: 2rem;
+    font-weight: 400;
+    width: 80%;
+    line-height: initial;
+    color: #fff0dc;
+}
+
+.rght-content-inner-2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.inner-2-1{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #fd7024;
+    overflow: hidden;
+}
+
+#section2-2{
+    position: absolute;
+    z-index: 3;
+}
+
+#section-2-3-p{
+    background-color: #88b7bd;
+}
+
+
+#section2-3{
+    position: absolute;
+    z-index: 3;
+}
+
+#section2-4{
+    position: absolute;
+    z-index: 3;
+}
